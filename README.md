@@ -7,7 +7,7 @@ alle klanten een account zodat klanten hun abonnementen en paard-gegevens kunnen
 beheren.
 <br/><br/>
 
-## Doelen
+## Doelstellingen
 
 - De staleigenaar (admin) kan abonnementen toevoegen die verschillen in naam, prijs en  paardenstal type.
 - De staleigenaar kan klanten (gebruiker) toevoegen, waarbij de naam kan worden ingevoerd.
@@ -19,7 +19,7 @@ beheren.
 - Een klant kan bepaalde gegevens wijzigen en ook abonnementen annuleren.
 <br/><br/>
 
-## Stappenplan
+## Stappenplan met installatie instructies
 **Stap 1:**
 Git en Node.js moeten op je computer zijn geïnstalleerd.
 
