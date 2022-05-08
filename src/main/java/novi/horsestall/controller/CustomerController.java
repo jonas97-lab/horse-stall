@@ -17,7 +17,7 @@ public class CustomerController {
     private CustomerService customerService;
 
     @GetMapping(value = "/customers")
-    public ResponseEntity<Object> getCustomers(@RequestParam(name="title", defaultValue="") String title) {
+    public ResponseEntity<Object> getCustomers(@RequestParam(name = "title", defaultValue = "") String title) {
         return ResponseEntity.ok(customerService.getCustomers(title));   // Jackson  object => json
     }
 

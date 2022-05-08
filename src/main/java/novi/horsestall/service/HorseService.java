@@ -19,8 +19,7 @@ public class HorseService {
     public Iterable<Horse> getHorses(String name) {
         if (name.isEmpty()) {
             return horseRepository.findAll();
-        }
-        else {
+        } else {
             return horseRepository.findAllByNameContainingIgnoreCase(name);
         }
     }
@@ -30,8 +29,7 @@ public class HorseService {
 
         if (optionalHorse.isPresent()) {
             return optionalHorse.get();
-        }
-        else {
+        } else {
             // exception
             throw new RecordNotFoundException("ID does not exist!!!");
         }
@@ -40,8 +38,7 @@ public class HorseService {
     public void deleteHorse(int id) {
         if (horseRepository.existsById(id)) {
             horseRepository.deleteById(id);
-        }
-        else {
+        } else {
             throw new RecordNotFoundException("ID does not exist!!!");
         }
     }
@@ -49,7 +46,7 @@ public class HorseService {
     public int addHorse(HorseRequestDto horseRequestDto) {
 
         String price = horseRequestDto.getFoodType();
-        List<Horse> horses = (List<Horse>)horseRepository.findAllByFoodType(price);
+        List<Horse> horses = (List<Horse>) horseRepository.findAllByFoodType(price);
         if (horses.size() > 0) {
             throw new BadRequestException("Isbn already exists!!!");
         }
@@ -72,8 +69,7 @@ public class HorseService {
 
             horse.setId(storedHorse.getId());
             horseRepository.save(horse);
-        }
-        else {
+        } else {
             throw new RecordNotFoundException("ID does not exist!!!");
         }
     }
@@ -84,10 +80,10 @@ public class HorseService {
         if (optionalHorse.isPresent()) {
             Horse storedHorse = horseRepository.findById(id).orElse(null);
 
-            if (horse.getName()!=null && !horse.getName().isEmpty()) {
+            if (horse.getName() != null && !horse.getName().isEmpty()) {
                 storedHorse.setName(horse.getName());
             }
-            if (horse.getFoodType()!=null && !horse.getFoodType().isEmpty()) {
+            if (horse.getFoodType() != null && !horse.getFoodType().isEmpty()) {
                 storedHorse.setFoodType(horse.getFoodType());
             }
 //            if (horse.getCopyPassport()!=null && !horse.getCopyPassport().isEmpty()) {
@@ -95,8 +91,7 @@ public class HorseService {
 //            }
             horseRepository.save(storedHorse);
 
-        }
-        else {
+        } else {
             throw new RecordNotFoundException("ID does not exist!!!");
         }
     }

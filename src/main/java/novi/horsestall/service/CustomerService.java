@@ -29,8 +29,7 @@ public class CustomerService {
 
         if (optionalCustomer.isPresent()) {
             return optionalCustomer.get();
-        }
-        else {
+        } else {
             throw new RecordNotFoundException("ID does not exist!!!");
         }
 
@@ -39,8 +38,7 @@ public class CustomerService {
     public void deleteCustomer(int id) {
         if (customerRepository.existsById(id)) {
             customerRepository.deleteById(id);
-        }
-        else {
+        } else {
             throw new RecordNotFoundException("ID does not exist!!!");
         }
     }
@@ -56,8 +54,7 @@ public class CustomerService {
         if (optionalCustomer.isPresent()) {
             Customer customer = optionalCustomer.get();
             return customer.getMemberships();
-        }
-        else {
+        } else {
             throw new RecordNotFoundException("ID does not exist!!!");
         }
     }
@@ -73,8 +70,7 @@ public class CustomerService {
 
             memberships.add(membership);
             customerRepository.save(customer);
-        }
-        else {
+        } else {
             throw new RecordNotFoundException("ID does not exist!!!");
         }
     }

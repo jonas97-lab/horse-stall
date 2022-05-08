@@ -69,8 +69,7 @@ public class UserService {
 
             User newUser = userRepository.save(user);
             return newUser.getUsername();
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             throw new BadRequestException("Cannot create user.");
         }
 
@@ -79,8 +78,7 @@ public class UserService {
     public void deleteUser(String username) {
         if (userRepository.existsById(username)) {
             userRepository.deleteById(username);
-        }
-        else {
+        } else {
             throw new UserNotFoundException(username);
         }
     }
@@ -89,8 +87,7 @@ public class UserService {
         Optional<User> userOptional = userRepository.findById(username);
         if (userOptional.isEmpty()) {
             throw new UserNotFoundException(username);
-        }
-        else {
+        } else {
             User user = userOptional.get();
             user.setPassword(passwordEncoder.encode(newUser.getPassword()));
             user.setEmail(newUser.getEmail());
@@ -103,8 +100,7 @@ public class UserService {
         Optional<User> userOptional = userRepository.findById(username);
         if (userOptional.isEmpty()) {
             throw new UserNotFoundException(username);
-        }
-        else {
+        } else {
             User user = userOptional.get();
             return user.getAuthorities();
         }
@@ -114,8 +110,7 @@ public class UserService {
         Optional<User> userOptional = userRepository.findById(username);
         if (userOptional.isEmpty()) {
             throw new UserNotFoundException(username);
-        }
-        else {
+        } else {
             User user = userOptional.get();
             user.addAuthority(authorityString);
             userRepository.save(user);
@@ -126,8 +121,7 @@ public class UserService {
         Optional<User> userOptional = userRepository.findById(username);
         if (userOptional.isEmpty()) {
             throw new UserNotFoundException(username);
-        }
-        else {
+        } else {
             User user = userOptional.get();
             user.removeAuthority(authorityString);
             userRepository.save(user);
@@ -165,16 +159,13 @@ public class UserService {
                     User user = userOptional.get();
                     user.setPassword(passwordEncoder.encode(password));
                     userRepository.save(user);
-                }
-                else {
+                } else {
                     throw new UserNotFoundException(username);
                 }
-            }
-            else {
+            } else {
                 throw new InvalidPasswordException();
             }
-        }
-        else {
+        } else {
             throw new NotAuthorizedException();
         }
     }

@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class HorseStallApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(HorseStallApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(HorseStallApplication.class, args);
+    }
 
 }

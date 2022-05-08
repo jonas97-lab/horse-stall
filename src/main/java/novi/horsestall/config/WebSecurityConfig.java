@@ -63,7 +63,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic()
                 .and()
                 .authorizeRequests()
-                .antMatchers(PATCH,"/users/{^[\\w]$}/password").authenticated()
+                .antMatchers(PATCH, "/users/{^[\\w]$}/password").authenticated()
                 .antMatchers("/users/**").hasRole("ADMIN")
                 .antMatchers("/books/**").hasRole("USER")
                 .antMatchers("/persons/**").hasAnyRole("USER")

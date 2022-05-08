@@ -1,6 +1,7 @@
 package novi.horsestall.model;
 
 import javax.persistence.*;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -21,7 +22,8 @@ public class Membership {
     // voor Spring Boot (JPA) is een constructor niet nodig
 
     // default constructor
-    public Membership() {}
+    public Membership() {
+    }
 
     public Membership(String name, String price, String typeOfHorseStall) {
         this.name = name;

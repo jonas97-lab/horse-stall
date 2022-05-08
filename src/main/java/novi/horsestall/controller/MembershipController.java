@@ -16,10 +16,11 @@ public class MembershipController {
 
     @Autowired
     private MembershipService membershipService;
+
     @GetMapping(value = "/memberships")
-    public ResponseEntity<Object> getMemberships(@RequestParam(name="title", defaultValue="") String name) {
+    public ResponseEntity<Object> getMemberships(@RequestParam(name = "title", defaultValue = "") String name) {
         return ResponseEntity.ok(membershipService.getMemberships(name));   // Jackson  object => json
-         }
+    }
 
     @GetMapping(value = "/memberships/{id}")
     public ResponseEntity<Object> getMembership(@PathVariable int id) {

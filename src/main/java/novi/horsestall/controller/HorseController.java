@@ -16,8 +16,9 @@ public class HorseController {
 
     @Autowired
     private HorseService horseService;
+
     @GetMapping(value = "/horses")
-    public ResponseEntity<Object> getHorses(@RequestParam(name="title", defaultValue="") String name) {
+    public ResponseEntity<Object> getHorses(@RequestParam(name = "title", defaultValue = "") String name) {
         return ResponseEntity.ok(horseService.getHorses(name));   // Jackson  object => json
     }
 

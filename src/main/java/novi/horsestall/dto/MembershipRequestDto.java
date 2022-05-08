@@ -8,15 +8,15 @@ public class MembershipRequestDto {
     // attributen
 
     @NotBlank
-    @Size(min=1, max=100)
+    @Size(min = 1, max = 100)
     private String name;
 
     @NotBlank
-    @Size(min=1, max=100)
+    @Size(min = 1, max = 100)
     private String price;
 
     @NotBlank
-    @Size(min=10, max=100)
+    @Size(min = 10, max = 100)
     private String typeOfHorseStall;
 
     // getters and setters

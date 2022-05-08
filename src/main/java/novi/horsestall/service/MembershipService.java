@@ -19,8 +19,7 @@ public class MembershipService {
     public Iterable<Membership> getMemberships(String name) {
         if (name.isEmpty()) {
             return membershipRepository.findAll();
-        }
-        else {
+        } else {
             return membershipRepository.findAllByNameContainingIgnoreCase(name);
         }
     }
@@ -30,8 +29,7 @@ public class MembershipService {
 
         if (optionalMembership.isPresent()) {
             return optionalMembership.get();
-        }
-        else {
+        } else {
             // exception
             throw new RecordNotFoundException("ID does not exist!!!");
         }
@@ -40,8 +38,7 @@ public class MembershipService {
     public void deleteMembership(int id) {
         if (membershipRepository.existsById(id)) {
             membershipRepository.deleteById(id);
-        }
-        else {
+        } else {
             throw new RecordNotFoundException("ID does not exist!!!");
         }
     }
@@ -49,7 +46,7 @@ public class MembershipService {
     public int addMembership(MembershipRequestDto membershipRequestDto) {
 
         String price = membershipRequestDto.getPrice();
-        List<Membership> memberships = (List<Membership>)membershipRepository.findAllByPrice(price);
+        List<Membership> memberships = (List<Membership>) membershipRepository.findAllByPrice(price);
         if (memberships.size() > 0) {
             throw new BadRequestException("Isbn already exists!!!");
         }
@@ -72,8 +69,7 @@ public class MembershipService {
 
             membership.setId(storedMembership.getId());
             membershipRepository.save(membership);
-        }
-        else {
+        } else {
             throw new RecordNotFoundException("ID does not exist!!!");
         }
     }
@@ -84,19 +80,18 @@ public class MembershipService {
         if (optionalMembership.isPresent()) {
             Membership storedMembership = membershipRepository.findById(id).orElse(null);
 
-            if (membership.getName()!=null && !membership.getName().isEmpty()) {
+            if (membership.getName() != null && !membership.getName().isEmpty()) {
                 storedMembership.setName(membership.getName());
             }
-            if (membership.getPrice()!=null && !membership.getPrice().isEmpty()) {
+            if (membership.getPrice() != null && !membership.getPrice().isEmpty()) {
                 storedMembership.setPrice(membership.getPrice());
             }
-            if (membership.getTypeOfHorseStall()!=null && !membership.getTypeOfHorseStall().isEmpty()) {
+            if (membership.getTypeOfHorseStall() != null && !membership.getTypeOfHorseStall().isEmpty()) {
                 storedMembership.setTypeOfHorseStall(membership.getTypeOfHorseStall());
             }
             membershipRepository.save(storedMembership);
 
-        }
-        else {
+        } else {
             throw new RecordNotFoundException("ID does not exist!!!");
         }
     }

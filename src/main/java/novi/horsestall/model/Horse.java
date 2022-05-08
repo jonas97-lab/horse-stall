@@ -1,5 +1,7 @@
 package novi.horsestall.model;
+
 import javax.persistence.*;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -20,7 +22,8 @@ public class Horse {
     // voor Spring Boot (JPA) is een constructor niet nodig
 
     // default constructor
-    public Horse() {}
+    public Horse() {
+    }
 
     public Horse(String name, String foodType, Boolean copyPassport) {
         this.name = name;

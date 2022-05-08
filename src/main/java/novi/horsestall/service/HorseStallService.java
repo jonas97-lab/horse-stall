@@ -29,8 +29,7 @@ public class HorseStallService {
 
         if (optionalHorseStall.isPresent()) {
             return optionalHorseStall.get();
-        }
-        else {
+        } else {
             throw new RecordNotFoundException("ID does not exist!!!");
         }
 
@@ -39,8 +38,7 @@ public class HorseStallService {
     public void deleteHorseStall(int id) {
         if (horseStallRepository.existsById(id)) {
             horseStallRepository.deleteById(id);
-        }
-        else {
+        } else {
             throw new RecordNotFoundException("ID does not exist!!!");
         }
     }
@@ -56,8 +54,7 @@ public class HorseStallService {
         if (optionalHorseStall.isPresent()) {
             HorseStall horseStall = optionalHorseStall.get();
             return horseStall.getHorses();
-        }
-        else {
+        } else {
             throw new RecordNotFoundException("ID does not exist!!!");
         }
     }
@@ -73,8 +70,7 @@ public class HorseStallService {
 
             horses.add(horse);
             horseStallRepository.save(horseStall);
-        }
-        else {
+        } else {
             throw new RecordNotFoundException("ID does not exist!!!");
         }
     }

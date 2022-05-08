@@ -8,11 +8,11 @@
 		<version>2.5.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>nl.novi</groupId>
-	<artifactId>hello</artifactId>
+	<groupId>novi</groupId>
+	<artifactId>horsestall</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hello</name>
-	<description>Demo project for Spring Boot</description>
+	<name>horsestall</name>
+	<description>Horsestall project</description>
 	<properties>
 		<java.version>14</java.version>
 	</properties>

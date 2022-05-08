@@ -4,58 +4,60 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-    @Entity
-    @Table(name = "horseStalls")
-    public class HorseStall {
+@Entity
+@Table(name = "horseStalls")
+public class HorseStall {
 
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private int id;
-        private String name;
-        private String size;
-        private String type;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String name;
+    private String size;
+    private String type;
 
-        @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
-        private List<Horse> horses = new ArrayList<>();
+    @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Horse> horses = new ArrayList<>();
 
-        // getters and setters
+    // getters and setters
 
-        public int getId() {
-            return id;
-        }
-        public void setId(int id) {
-            this.id = id;
-        }
+    public int getId() {
+        return id;
+    }
 
-        public String getName() {
-            return name;
-        }
-        public void setName(String name) {
-            this.name = name;
-        }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-        public String getSize() {
-            return size;
-        }
+    public String getName() {
+        return name;
+    }
 
-        public void setSize(String size) {
-            this.size = size;
-        }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-        public String getType() {
-            return type;
-        }
+    public String getSize() {
+        return size;
+    }
 
-        public void setType(String type) {
-            this.type = type;
-        }
+    public void setSize(String size) {
+        this.size = size;
+    }
 
-        public List<Horse> getHorses() {
-            return horses;
-        }
+    public String getType() {
+        return type;
+    }
 
-        public void setHorses(List<Horse> horses) {
-            this.horses = horses;
-        }
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public List<Horse> getHorses() {
+        return horses;
+    }
+
+    public void setHorses(List<Horse> horses) {
+        this.horses = horses;
+    }
 }
