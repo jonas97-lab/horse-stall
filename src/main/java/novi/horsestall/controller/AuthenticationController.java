@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AuthenticationController {
 
-
     UserAuthenticateService userAuthenticateService;
 
     @Autowired
@@ -27,5 +26,4 @@ public class AuthenticationController {
 
         return ResponseEntity.ok(authenticationResponseDto);
     }
-
 }

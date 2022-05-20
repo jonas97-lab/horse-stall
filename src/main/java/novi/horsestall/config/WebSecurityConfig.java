@@ -65,10 +65,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(PATCH, "/users/{^[\\w]$}/password").authenticated()
                 .antMatchers("/users/**").hasRole("ADMIN")
-                .antMatchers("/books/**").hasRole("USER")
-                .antMatchers("/persons/**").hasAnyRole("USER")
-                .antMatchers(HttpMethod.GET, "hello").authenticated()
-                .antMatchers(HttpMethod.GET, "goodbye").permitAll()
+                .antMatchers("/memberships/**").hasRole("USER")
+                .antMatchers("/customers/**").hasAnyRole("USER")
+                .antMatchers(HttpMethod.GET, "memberships").authenticated()
+                .antMatchers(HttpMethod.GET, "customers").permitAll()
                 .anyRequest().permitAll()
                 .and()
                 .cors()
@@ -79,7 +79,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
-
     }
-
 }
