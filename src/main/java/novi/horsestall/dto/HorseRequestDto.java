@@ -43,5 +43,4 @@ public class HorseRequestDto {
     public void setCopyPassport(Boolean copyPassport) {
         this.copyPassport = copyPassport;
     }
-
 }

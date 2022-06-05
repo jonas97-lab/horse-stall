@@ -11,7 +11,7 @@ public class Membership {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
+    private String type;
     private String price;
     private String typeOfHorseStall;
 
@@ -25,16 +25,16 @@ public class Membership {
     public Membership() {
     }
 
-    public Membership(String name, String price, String typeOfHorseStall) {
-        this.name = name;
+    public Membership(String type, String price, String typeOfHorseStall) {
+        this.type = type;
         this.price = price;
         this.typeOfHorseStall = typeOfHorseStall;
     }
 
     // full constructor
-    public Membership(int id, String name, String price, String typeOfHorseStall) {
+    public Membership(int id, String type, String price, String typeOfHorseStall) {
         this.id = id;
-        this.name = name;
+        this.type = type;
         this.price = price;
         this.typeOfHorseStall = typeOfHorseStall;
     }
@@ -47,12 +47,12 @@ public class Membership {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getType() {
+        return type;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getPrice() {
@@ -69,13 +69,5 @@ public class Membership {
 
     public void setTypeOfHorseStall(String typeOfHorseStall) {
         this.typeOfHorseStall = typeOfHorseStall;
-    }
-
-    public Customer getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Customer owner) {
-        this.owner = owner;
     }
 }

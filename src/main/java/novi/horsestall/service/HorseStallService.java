@@ -32,7 +32,6 @@ public class HorseStallService {
         } else {
             throw new RecordNotFoundException("ID does not exist");
         }
-
     }
 
     public void deleteHorseStall(int id) {
@@ -74,6 +73,4 @@ public class HorseStallService {
             throw new RecordNotFoundException("ID does not exist");
         }
     }
-
-
 }

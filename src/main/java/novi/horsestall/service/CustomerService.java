@@ -32,7 +32,6 @@ public class CustomerService {
         } else {
             throw new RecordNotFoundException("ID does not exist");
         }
-
     }
 
     public void deleteCustomer(int id) {
@@ -74,6 +73,4 @@ public class CustomerService {
             throw new RecordNotFoundException("ID does not exist");
         }
     }
-
-
 }

@@ -29,7 +29,6 @@ public class User {
     private Set<Authority> authorities = new HashSet<>();
 
     // getters and setters
-
     public String getUsername() {
         return username;
     }
@@ -85,5 +84,4 @@ public class User {
     public void removeAuthority(String authorityString) {
         this.authorities.removeIf(authority -> authority.getAuthority().equalsIgnoreCase(authorityString));
     }
-
 }

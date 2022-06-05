@@ -70,12 +70,4 @@ public class Horse {
     public void setCopyPassport(Boolean copyPassport) {
         this.copyPassport = copyPassport;
     }
-
-    public HorseStall getOwner() {
-        return owner;
-    }
-
-    public void setOwner(HorseStall owner) {
-        this.owner = owner;
-    }
 }

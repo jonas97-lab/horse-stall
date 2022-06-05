@@ -11,5 +11,4 @@ public class AuthenticationResponseDto {
     public String getJwt() {
         return jwt;
     }
-
 }

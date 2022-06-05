@@ -56,5 +56,4 @@ public class HorseController {
 
         return ResponseEntity.noContent().build();
     }
-
 }

@@ -20,5 +20,4 @@ public class AuthorityKey implements Serializable {
     public int hashCode() {
         return Objects.hash(username, authority);
     }
-
 }

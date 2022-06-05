@@ -9,12 +9,12 @@ VALUES
 ('admin', 'ROLE_USER'),
 ('admin', 'ROLE_ADMIN');
 
-INSERT INTO customers (name)
+INSERT INTO customers (first_name, last_name, bank_account)
 VALUES
-('Johannes'),
-('Fleur');
+('Johannes', 'Bruijn', 'NL18RABO0123459876'),
+('Fleur', 'Boers', 'NL98INGB0003856625');
 
-INSERT INTO memberships (name, price, type_of_horse_stall, customer_id)
+INSERT INTO memberships (type, price, type_of_horse_stall, customer_id)
 VALUES
 ('Weekabonnement','€ 9,95','Paardenbox', 1),
 ('Maandabonnement','€ 29,95','Paardencontainer', 2);

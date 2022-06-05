@@ -43,7 +43,6 @@ public class HorseService {
 
     public int addHorse(HorseRequestDto horseRequestDto) {
 
-
         Horse horse = new Horse();
         horse.setName(horseRequestDto.getName());
         horse.setFoodType(horseRequestDto.getFoodType());
@@ -84,5 +83,4 @@ public class HorseService {
             throw new RecordNotFoundException("ID does not exist");
         }
     }
-
 }

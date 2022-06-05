@@ -9,7 +9,7 @@ public class MembershipRequestDto {
 
     @NotBlank
     @Size(min = 1, max = 100)
-    private String name;
+    private String type;
 
     @NotBlank
     @Size(min = 1, max = 100)
@@ -21,12 +21,12 @@ public class MembershipRequestDto {
 
     // getters and setters
 
-    public String getName() {
-        return name;
+    public String getType() {
+        return type;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getPrice() {
@@ -44,5 +44,4 @@ public class MembershipRequestDto {
     public void setTypeOfHorseStall(String typeOfHorseStall) {
         this.typeOfHorseStall = typeOfHorseStall;
     }
-
 }

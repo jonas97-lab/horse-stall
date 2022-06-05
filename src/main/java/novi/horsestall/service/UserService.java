@@ -72,7 +72,6 @@ public class UserService {
         } catch (Exception ex) {
             throw new BadRequestException("Cannot create user");
         }
-
     }
 
     public void deleteUser(String username) {
@@ -169,5 +168,4 @@ public class UserService {
             throw new NotAuthorizedException();
         }
     }
-
 }

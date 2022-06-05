@@ -17,7 +17,6 @@ public class Authority implements Serializable {
     private String authority;
 
     // constructors
-
     public Authority() {
     }
 
@@ -27,7 +26,6 @@ public class Authority implements Serializable {
     }
 
     // getters and setters
-
     public String getUsername() {
         return username;
     }

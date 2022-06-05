@@ -16,11 +16,11 @@ public class MembershipService {
     @Autowired
     private MembershipRepository membershipRepository;
 
-    public Iterable<Membership> getMemberships(String name) {
-        if (name.isEmpty()) {
+    public Iterable<Membership> getMemberships(String type) {
+        if (type.isEmpty()) {
             return membershipRepository.findAll();
         } else {
-            return membershipRepository.findAllByNameContainingIgnoreCase(name);
+            return membershipRepository.findAllByTypeContainingIgnoreCase(type);
         }
     }
 
@@ -53,7 +53,7 @@ public class MembershipService {
 
 
         Membership membership = new Membership();
-        membership.setName(membershipRequestDto.getName());
+        membership.setType(membershipRequestDto.getType());
         membership.setPrice(membershipRequestDto.getPrice());
         membership.setTypeOfHorseStall(membershipRequestDto.getTypeOfHorseStall());
 
@@ -80,8 +80,8 @@ public class MembershipService {
         if (optionalMembership.isPresent()) {
             Membership storedMembership = membershipRepository.findById(id).orElse(null);
 
-            if (membership.getName() != null && !membership.getName().isEmpty()) {
-                storedMembership.setName(membership.getName());
+            if (membership.getType() != null && !membership.getType().isEmpty()) {
+                storedMembership.setType(membership.getType());
             }
             if (membership.getPrice() != null && !membership.getPrice().isEmpty()) {
                 storedMembership.setPrice(membership.getPrice());
@@ -95,5 +95,4 @@ public class MembershipService {
             throw new RecordNotFoundException("ID does not exist");
         }
     }
-
 }

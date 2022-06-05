@@ -52,5 +52,4 @@ public class CustomerController {
         customerService.addCustomerMembership(id, membership);
         return ResponseEntity.created(null).build();
     }
-
 }

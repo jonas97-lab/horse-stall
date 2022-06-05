@@ -85,5 +85,4 @@ public class UserController {
         userService.setPassword(username, password);
         return ResponseEntity.noContent().build();
     }
-
 }
