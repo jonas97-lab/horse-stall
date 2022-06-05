@@ -31,7 +31,7 @@ public class MembershipService {
             return optionalMembership.get();
         } else {
             // exception
-            throw new RecordNotFoundException("ID does not exist!!!");
+            throw new RecordNotFoundException("ID does not exist");
         }
     }
 
@@ -39,16 +39,16 @@ public class MembershipService {
         if (membershipRepository.existsById(id)) {
             membershipRepository.deleteById(id);
         } else {
-            throw new RecordNotFoundException("ID does not exist!!!");
+            throw new RecordNotFoundException("ID does not exist");
         }
     }
 
     public int addMembership(MembershipRequestDto membershipRequestDto) {
 
-        String price = membershipRequestDto.getPrice();
-        List<Membership> memberships = (List<Membership>) membershipRepository.findAllByPrice(price);
+        String typeOfHorseStall = membershipRequestDto.getTypeOfHorseStall();
+        List<Membership> memberships = (List<Membership>) membershipRepository.findAllByTypeOfHorseStall(typeOfHorseStall);
         if (memberships.size() > 0) {
-            throw new BadRequestException("Isbn already exists!!!");
+            throw new BadRequestException("Horse stall is already taken");
         }
 
 
@@ -70,7 +70,7 @@ public class MembershipService {
             membership.setId(storedMembership.getId());
             membershipRepository.save(membership);
         } else {
-            throw new RecordNotFoundException("ID does not exist!!!");
+            throw new RecordNotFoundException("ID does not exist");
         }
     }
 
@@ -92,7 +92,7 @@ public class MembershipService {
             membershipRepository.save(storedMembership);
 
         } else {
-            throw new RecordNotFoundException("ID does not exist!!!");
+            throw new RecordNotFoundException("ID does not exist");
         }
     }
 

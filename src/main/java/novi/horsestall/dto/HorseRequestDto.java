@@ -16,7 +16,6 @@ public class HorseRequestDto {
     private String foodType;
 
     @NotBlank
-    @Size(min = 10, max = 100)
     private Boolean copyPassport;
 
     // getters and setters

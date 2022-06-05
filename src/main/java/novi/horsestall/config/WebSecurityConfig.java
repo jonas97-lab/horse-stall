@@ -60,9 +60,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http
-                .httpBasic()
-                .and()
                 .authorizeRequests()
+                .antMatchers(HttpMethod.POST, "/authenticate").permitAll()
                 .antMatchers(PATCH, "/users/{^[\\w]$}/password").authenticated()
                 .antMatchers("/users/**").hasRole("ADMIN")
                 .antMatchers("/memberships/**").hasRole("USER")

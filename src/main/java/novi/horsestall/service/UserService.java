@@ -70,7 +70,7 @@ public class UserService {
             User newUser = userRepository.save(user);
             return newUser.getUsername();
         } catch (Exception ex) {
-            throw new BadRequestException("Cannot create user.");
+            throw new BadRequestException("Cannot create user");
         }
 
     }

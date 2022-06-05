@@ -1,14 +1,12 @@
 package novi.horsestall.service;
 
 import novi.horsestall.dto.HorseRequestDto;
-import novi.horsestall.exception.BadRequestException;
 import novi.horsestall.exception.RecordNotFoundException;
 import novi.horsestall.model.Horse;
 import novi.horsestall.repository.HorseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -31,7 +29,7 @@ public class HorseService {
             return optionalHorse.get();
         } else {
             // exception
-            throw new RecordNotFoundException("ID does not exist!!!");
+            throw new RecordNotFoundException("ID does not exist");
         }
     }
 
@@ -39,17 +37,11 @@ public class HorseService {
         if (horseRepository.existsById(id)) {
             horseRepository.deleteById(id);
         } else {
-            throw new RecordNotFoundException("ID does not exist!!!");
+            throw new RecordNotFoundException("ID does not exist");
         }
     }
 
     public int addHorse(HorseRequestDto horseRequestDto) {
-
-        String price = horseRequestDto.getFoodType();
-        List<Horse> horses = (List<Horse>) horseRepository.findAllByFoodType(price);
-        if (horses.size() > 0) {
-            throw new BadRequestException("Isbn already exists!!!");
-        }
 
 
         Horse horse = new Horse();
@@ -70,7 +62,7 @@ public class HorseService {
             horse.setId(storedHorse.getId());
             horseRepository.save(horse);
         } else {
-            throw new RecordNotFoundException("ID does not exist!!!");
+            throw new RecordNotFoundException("ID does not exist");
         }
     }
 
@@ -86,13 +78,10 @@ public class HorseService {
             if (horse.getFoodType() != null && !horse.getFoodType().isEmpty()) {
                 storedHorse.setFoodType(horse.getFoodType());
             }
-//            if (horse.getCopyPassport()!=null && !horse.getCopyPassport().isEmpty()) {
-//                storedHorse.setCopyPassport(horse.getCopyPassport());
-//            }
             horseRepository.save(storedHorse);
 
         } else {
-            throw new RecordNotFoundException("ID does not exist!!!");
+            throw new RecordNotFoundException("ID does not exist");
         }
     }
 

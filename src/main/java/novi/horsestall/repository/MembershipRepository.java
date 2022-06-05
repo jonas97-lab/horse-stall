@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 public interface MembershipRepository extends CrudRepository<Membership, Integer> {
     Iterable<Membership> findAllByNameContainingIgnoreCase(String name);
 
-    Iterable<Membership> findAllByPrice(String price);
+    Iterable<Membership> findAllByTypeOfHorseStall(String typeOfHorseStall);
 
     //    @Query("SELECT b FROM Book b WHERE b.title LIKE %:s%")    // using JPQL
 //    or
