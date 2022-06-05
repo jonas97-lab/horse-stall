@@ -19,10 +19,10 @@ VALUES
 ('Weekabonnement','€ 9,95','Paardenbox', 1),
 ('Maandabonnement','€ 29,95','Paardencontainer', 2);
 
-INSERT INTO horse_stalls (name, size, type)
+INSERT INTO horse_stalls (type, size)
 VALUES
-('Bliksem','30 m2','Actiefstal'),
-('Belle','40 m2','Loopstal');
+('Actiefstal', '30 m2'),
+('Loopstal', '40 m2');
 
 INSERT INTO horses (name, food_type, copy_passport, horse_stall_id)
 VALUES

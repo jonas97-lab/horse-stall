@@ -8,11 +8,9 @@ import java.util.List;
 @Table(name = "horseStalls")
 public class HorseStall {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
     private String size;
     private String type;
 
@@ -20,7 +18,6 @@ public class HorseStall {
     private List<Horse> horses = new ArrayList<>();
 
     // getters and setters
-
     public int getId() {
         return id;
     }
@@ -29,12 +26,12 @@ public class HorseStall {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getType() {
+        return type;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getSize() {
@@ -43,14 +40,6 @@ public class HorseStall {
 
     public void setSize(String size) {
         this.size = size;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public List<Horse> getHorses() {
