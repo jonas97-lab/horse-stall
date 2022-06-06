@@ -25,8 +25,26 @@ public class IntegrationTest {
     }
 
     @Test
-    void shouldReturn200ForEndpointBooks() throws Exception {
+    void shouldReturn200ForEndpointMemberships() throws Exception {
         mockMvc.perform(get("/memberships").with(user("user").roles("USER")))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    void shouldReturn200ForEndpointHorses() throws Exception {
+        mockMvc.perform(get("/horses").with(user("user").roles("USER")))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    void shouldReturn200ForEndpointHorseStalls() throws Exception {
+        mockMvc.perform(get("/horsestalls").with(user("user").roles("USER")))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    void shouldReturn200ForEndpointCustomers() throws Exception {
+        mockMvc.perform(get("/customers").with(user("user").roles("USER")))
                 .andExpect(status().isOk());
     }
 }

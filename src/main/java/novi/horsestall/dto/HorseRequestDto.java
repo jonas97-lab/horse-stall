@@ -6,7 +6,6 @@ import javax.validation.constraints.Size;
 public class HorseRequestDto {
 
     // attributen
-
     @NotBlank
     @Size(min = 1, max = 100)
     private String name;
@@ -19,7 +18,6 @@ public class HorseRequestDto {
     private Boolean copyPassport;
 
     // getters and setters
-
     public String getName() {
         return name;
     }

@@ -19,7 +19,6 @@ public class Horse {
     @ManyToOne
     @JoinColumn(name = "horseStall_id", referencedColumnName = "id")
     private HorseStall owner;
-    // voor Spring Boot (JPA) is een constructor niet nodig
 
     // default constructor
     public Horse() {

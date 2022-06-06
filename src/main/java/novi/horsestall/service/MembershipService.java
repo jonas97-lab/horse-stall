@@ -47,10 +47,9 @@ public class MembershipService {
 
         String typeOfHorseStall = membershipRequestDto.getTypeOfHorseStall();
         List<Membership> memberships = (List<Membership>) membershipRepository.findAllByTypeOfHorseStall(typeOfHorseStall);
-        if (memberships.size() > 0) {
+        if (memberships.size() > 10) {
             throw new BadRequestException("Horse stall is already taken");
         }
-
 
         Membership membership = new Membership();
         membership.setType(membershipRequestDto.getType());

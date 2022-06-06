@@ -8,7 +8,6 @@ import java.util.List;
 @Table(name = "customers")
 public class Customer {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -20,7 +19,6 @@ public class Customer {
     private List<Membership> memberships = new ArrayList<>();
 
     // getters and setters
-
     public int getId() {
         return id;
     }

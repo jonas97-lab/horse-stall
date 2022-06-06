@@ -19,7 +19,6 @@ public class Membership {
     @ManyToOne
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private Customer owner;
-    // voor Spring Boot (JPA) is een constructor niet nodig
 
     // default constructor
     public Membership() {

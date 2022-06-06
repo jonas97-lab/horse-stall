@@ -6,7 +6,6 @@ import javax.validation.constraints.Size;
 public class MembershipRequestDto {
 
     // attributen
-
     @NotBlank
     @Size(min = 1, max = 100)
     private String type;
@@ -20,7 +19,6 @@ public class MembershipRequestDto {
     private String typeOfHorseStall;
 
     // getters and setters
-
     public String getType() {
         return type;
     }
