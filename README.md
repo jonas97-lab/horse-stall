@@ -3,16 +3,15 @@
 Bij een manage wordt het stalmanagement nog allemaal in Excel gedaan. Daarom wilt de programmeur het
 backend-systeem van een stal managementsysteem programmeren. Het gaat om een
 pensionstal met klanten die één of meerdere paarden stallen bij hen. Het systeem verschaft
-alle klanten een account zodat klanten hun abonnementen en paard-gegevens kunnen
+alle klanten een account zodat klanten hun abonnementen en paard gegevens kunnen
 beheren.
 <br/><br/>
 
 ## Doelstellingen
-
-- De staleigenaar (admin) kan abonnementen toevoegen die verschillen in naam, prijs en  paardenstal type.
-- De staleigenaar kan klanten (gebruiker) toevoegen, waarbij de naam kan worden ingevoerd.
-- De staleigenaar kan stallen toevoegen, waarbij naam, grootte paardenstal en paardenstal type kan worden ingevoerd.
-- De staleigenaar kan ook paarden toevoegen. Een paard heeft een naam, kopie paspoort, en type voer dat het nodig heeft.
+- De staleigenaar (admin) kan abonnementen toevoegen die verschillen in abonnementstype, prijs en paardenstal type.
+- De staleigenaar kan klanten (gebruiker) toevoegen, waarbij de voornaam, achternaam en bankrekeningnummer kan worden ingevoerd.
+- De staleigenaar kan stallen toevoegen, waarbij de grootte en paardenstal type kan worden ingevoerd.
+- De staleigenaar kan ook paarden toevoegen. Een paard heeft een naam, kopie paspoort, en type voer dat het wilt eten.
 - Een paard is altijd gekoppeld aan een stal.
 - Een abonnement is altijd gekoppeld aan een klant.
 - Een klant kan de gegevens van zijn abonnement(en) bekijken.
