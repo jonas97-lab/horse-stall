@@ -1,6 +1,5 @@
 package novi.horsestall.service;
 
-import novi.horsestall.dto.HorseRequestDto;
 import novi.horsestall.exception.RecordNotFoundException;
 import novi.horsestall.model.Horse;
 import novi.horsestall.repository.HorseRepository;
@@ -41,7 +40,7 @@ public class HorseService {
         }
     }
 
-    public int addHorse(HorseRequestDto horseRequestDto) {
+    public int addHorse(Horse horseRequestDto) {
 
         Horse horse = new Horse();
         horse.setName(horseRequestDto.getName());
@@ -76,6 +75,9 @@ public class HorseService {
             }
             if (horse.getFoodType() != null && !horse.getFoodType().isEmpty()) {
                 storedHorse.setFoodType(horse.getFoodType());
+            }
+            if (horse.getCopyPassport() != null) {
+                storedHorse.setCopyPassport(horse.getCopyPassport());
             }
             horseRepository.save(storedHorse);
 

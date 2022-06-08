@@ -2,13 +2,11 @@ package novi.horsestall.controller;
 
 import novi.horsestall.model.Horse;
 import novi.horsestall.service.HorseService;
-import novi.horsestall.dto.HorseRequestDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
@@ -34,8 +32,8 @@ public class HorseController {
     }
 
     @PostMapping(value = "/horses")
-    public ResponseEntity<Object> addHorse(@Valid @RequestBody HorseRequestDto horseRequestDto) {
-        int newId = horseService.addHorse(horseRequestDto);
+    public ResponseEntity<Object> addHorse(@RequestBody Horse horse) {
+        int newId = horseService.addHorse(horse);
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(newId).toUri();
