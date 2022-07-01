@@ -65,9 +65,10 @@ public class HorseStallService {
             HorseStall horseStall = optionalHorseStall.get();
             List<Horse> horses = horseStall.getHorses();
 
-            horseRepository.save(horse);
+//          horseRepository.save(horse);
 
             horses.add(horse);
+            horseStall.setHorses(horses);
             horseStallRepository.save(horseStall);
         } else {
             throw new RecordNotFoundException("ID does not exist");
