@@ -2,6 +2,7 @@ package novi.horsestall.model;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -18,6 +19,7 @@ public class Membership {
     @JsonIgnoreProperties("memberships")
     @ManyToOne
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
+    @JsonIgnore
     private Customer owner;
 
     // default constructor
@@ -68,5 +70,13 @@ public class Membership {
 
     public void setTypeOfHorseStall(String typeOfHorseStall) {
         this.typeOfHorseStall = typeOfHorseStall;
+    }
+
+    public Customer getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Customer owner) {
+        this.owner = owner;
     }
 }

@@ -65,7 +65,8 @@ public class HorseStallService {
             HorseStall horseStall = optionalHorseStall.get();
             List<Horse> horses = horseStall.getHorses();
 
-//          horseRepository.save(horse);
+            horse.setOwner(horseStall);
+            horseRepository.save(horse);
 
             horses.add(horse);
             horseStall.setHorses(horses);

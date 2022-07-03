@@ -65,9 +65,11 @@ public class CustomerService {
             Customer customer = optionalCustomer.get();
             List<Membership> memberships = customer.getMemberships();
 
+            membership.setOwner(customer);
             membershipRepository.save(membership);
 
             memberships.add(membership);
+            customer.setMemberships(memberships);
             customerRepository.save(customer);
         } else {
             throw new RecordNotFoundException("ID does not exist");

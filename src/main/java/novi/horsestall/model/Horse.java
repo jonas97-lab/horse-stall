@@ -2,6 +2,7 @@ package novi.horsestall.model;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -18,6 +19,7 @@ public class Horse {
     @JsonIgnoreProperties("horses")
     @ManyToOne
     @JoinColumn(name = "horseStall_id", referencedColumnName = "id")
+    @JsonIgnore
     private HorseStall owner;
 
     // default constructor
@@ -68,5 +70,13 @@ public class Horse {
 
     public void setCopyPassport(Boolean copyPassport) {
         this.copyPassport = copyPassport;
+    }
+
+    public HorseStall getOwner() {
+        return owner;
+    }
+
+    public void setOwner(HorseStall owner) {
+        this.owner = owner;
     }
 }
