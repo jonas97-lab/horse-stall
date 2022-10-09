@@ -20,19 +20,19 @@ beheren.
 
 ## Stappenplan met installatie instructies
 **Stap 1:**
-Git en Node.js moeten op je computer zijn geïnstalleerd.
+Het is belangrijk om een code editor te hebben, voordat je een project cloned. Een editor wordt gebruikt om de code te schrijven of te ontwikkelen die het web aandrijft.
 
 **Stap 2:**
-Creëer een bestand en kloon vanaf je terminal de onderstaande repository.
+Je kunt deze repository clonen van GitHub naar je lokale computer om het makkelijker te maken om, in dit geval, het project lokaal te bekijken. Maar clonen wordt voornamelijk gedaan om merge conflicten op te lossen, bestanden toe te voegen of te verwijderen, en grotere commits te pushen.
 
 **Stap 3:**
-Als je het project gecloned hebt naar jouw lokale machine, installeer je eerst alle dependencies van Spring Boot die in de pom.xml bestand zitten.
+Als je het project gecloned hebt naar jouw lokale machine, installeer je eerst alle dependencies van Spring Boot die in het pom.xml bestand zitten.
 
 **Stap 4:**
-Wanneer dit klaar is, kun je de applicatie starten met behulp van de ‘Run’ knop (als je IntelliJ hebt).
+Wanneer dit klaar is, kun je de applicatie starten met behulp van de ‘Run’ knop (als je IntelliJ hebt). Open hiervoor de klasse met de main() methode (deze wordt meestal ook aangeduid met de @SpringBootApplication annotatie), klik op het ‘Run’ icoon zie, en selecteer deze om de klasse uit te voeren.
 
 **Stap 5:**
-Met Postman kun je RESTful API's creëeren, delen, testen en documenteren.
+Het wordt aangeraden om Postman te installeren. Met Postman kun je RESTful API's creëeren, delen, testen en documenteren.
 <br/><br/>
 
 ## Gebruikte framework
