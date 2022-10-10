@@ -13,9 +13,9 @@ beheren.
 - De staleigenaar kan stallen toevoegen, waarbij de grootte en paardenstal type kan worden ingevoerd.
 - De staleigenaar kan ook paarden toevoegen. Een paard heeft een naam, kopie paspoort, en type voer dat het wilt eten.
 - Een paard is altijd gekoppeld aan een stal.
-- Een abonnement is altijd gekoppeld aan een klant.
 - Een klant kan de gegevens van zijn abonnement(en) bekijken.
-- Een klant kan bepaalde gegevens wijzigen en ook abonnementen annuleren.
+- Een klant kan zijn/haar persoonlijke gegevens wijzigen (voornaam, achternaam en bankrekeningnummer).
+- Een klant kan abonnementen annuleren.
 <br/><br/>
 
 ## Stappenplan met installatie instructies
